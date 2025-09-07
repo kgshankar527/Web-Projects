@@ -1,0 +1,117 @@
+
+  
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+      /* Variables */
+:root {
+  --primary: #183b56;
+  --secondary: #577592;
+  --accent: #2487fd;
+  --accent-dark: #0056A4;
+  --radius: 10px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --transition: all 0.3s ease;
+  --maxw: 1180px;
+}
+
+body { font-family: 'Poppins', sans-serif; color: var(--primary); background: linear-gradient(135deg, #e0e7ff, #d1e3ff); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+.flex { display: flex; align-items: center; }
+
+/* Top Banner */
+.top-banner { background: linear-gradient(90deg, #4fb3d4, #78ccff); color: #fff; text-align: center; padding: 10px 20px; font-weight: 600; letter-spacing: .3px; }
+
+/* Navbar */
+.main-nav { justify-content: space-between; padding: 16px 0; }
+.company-logo img { width: 110px; border-radius: 8px; box-shadow: var(--shadow); }
+.nav-links ul { display: flex; gap: 24px; }
+
+.hover-link { position: relative; transition: var(--transition); }
+.hover-link::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0; background: var(--accent); transition: width .28s ease; }
+.hover-link:hover { color: var(--accent); }
+.hover-link:hover::after { width: 100%; }
+
+/* Buttons */
+.primary-button, .secondary-button { border-radius: 8px; padding: 12px 20px; font-weight: 700; cursor: pointer; transition: var(--transition); display: inline-block; }
+.primary-button { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
+.primary-button:hover { background: var(--accent-dark); transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 25px rgba(0,0,0,.15); }
+.secondary-button { border: 1px solid var(--secondary); color: var(--primary); background: transparent; }
+.secondary-button:hover { border-color: var(--accent-dark); color: var(--accent); transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,.08); }
+
+/* Header */
+header { padding: 56px 0; }
+.header-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; align-items: center; }
+.header-left h1 { font-size: 3rem; line-height: 1.15; margin-bottom: 14px; }
+.header-left p { font-family: 'Roboto', sans-serif; color: var(--secondary); margin-bottom: 20px; }
+.header-right img { border-radius: var(--radius); box-shadow: var(--shadow); }
+
+/* Companies */
+.companies-section { padding: 10px 0 30px; }
+.companies-header { text-align: center; margin: 16px 0 24px; }
+.logos { display: grid; grid-template-columns: repeat(7, minmax(70px, 1fr)); gap: 18px; align-items: center; }
+.logo { filter: grayscale(100%); opacity: 0.8; transition: var(--transition); }
+.logo:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-3px); }
+
+/* Features */
+.features-section { padding: 60px 0 10px; }
+.features-header { text-align: center; background: #19b1a3; color: #fff; padding: 14px 18px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 28px; }
+.features-area { display: grid; grid-template-columns: repeat(3, minmax(260px, 1fr)); gap: 24px; }
+.features-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; text-align: center; transition: var(--transition); }
+.features-card:hover { transform: translateY(-8px); box-shadow: 0 14px 30px rgba(0,0,0,.15); }
+.features-card i { margin-bottom: 12px; color: var(--accent); }
+
+/* Big Feature */
+.big-feature-section { padding: 56px 0; }
+.big-feature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; align-items: center; }
+.feature-img img { border-radius: var(--radius); box-shadow: var(--shadow); }
+.feature-desc { display: flex; flex-direction: column; gap: 14px; }
+
+/* Examples */
+.examples-section { padding: 30px 0 10px; }
+.examples-header { text-align: center; background: #61b5ff; color: #083456; padding: 16px 18px; border-radius: var(--radius); box-shadow: var(--shadow); }
+.examples-area { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 22px; margin-top: 24px; }
+.examples-card { min-height: 260px; border-radius: var(--radius); position: relative; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); }
+.examples-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.6)); }
+.examples-card:hover { transform: translateY(-8px); box-shadow: 0 14px 30px rgba(0,0,0,.15); }
+.card-text { position: absolute; bottom: 16px; left: 16px; right: 16px; color: #fff; font-weight: 700; }
+
+/* CTA */
+.cta-section { background: var(--primary); color: #fff; padding: 50px 0; text-align: center; margin-top: 34px; }
+.cta-section p { font-family: 'Roboto', sans-serif; color: #e7eef6; margin: 6px 0 16px; }
+
+/* Footer */
+footer { background: #ebf2fa; padding: 60px 0; margin-top: 40px; }
+.container-footer { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 28px; }
+.link-column { display: flex; flex-direction: column; gap: 10px; }
+.link-column h4, .link-column h3 { margin-bottom: 6px; }
+
+/* Subfooter – equal space line */
+.subfooter { background: #b9cde4; padding: 16px 0; }
+.subfooter-container { display: flex; justify-content: space-evenly; align-items: center; gap: 16px; flex-wrap: wrap; }
+.subfooter-container a { transition: var(--transition); }
+.subfooter-container a:hover { color: var(--accent); transform: scale(1.06); }
+
+/* Scroll-in Animation (via class) */
+section { opacity: 0; transform: translateY(36px); transition: all .9s cubic-bezier(.2,.6,.2,1); }
+section.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .logos { grid-template-columns: repeat(5, minmax(70px,1fr)); }
+  .features-area { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+  .big-feature-container { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .header-section { grid-template-columns: 1fr; text-align: center; }
+  .logos { grid-template-columns: repeat(3, minmax(70px,1fr)); }
+  .examples-area { grid-template-columns: 1fr; }
+  .container-footer { grid-template-columns: 1fr; text-align: center; }
+}
+
+  
