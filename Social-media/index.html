@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <p>Welcome to My Website 🎉</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-nav flex container">
+    <div class="company-logo">
+      <img src="https://dummyimage.com/100x50/000/fff&text=Logo" alt="Logo"/>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a class="hover-link" href="#">Home</a></li>
+        <li><a class="hover-link" href="#">About</a></li>
+        <li><a class="hover-link" href="#">Services</a></li>
+        <li><a class="hover-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header-section container section">
+    <div class="header-left">
+      <h1>Grow your business</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <a href="#" class="primary-button">Get Started</a>
+    </div>
+    <div class="header-right">
+      <img src="https://dummyimage.com/600x400/ccc/000" alt="Business"/>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="features-section container section">
+    <div class="features-header">
+      <h2>Our Features</h2>
+    </div>
+    <div class="features-area">
+      <div class="features-card">
+        <i class="fa-solid fa-rocket fa-2x"></i>
+        <h3>Fast Performance</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="features-card">
+        <i class="fa-solid fa-shield-halved fa-2x"></i>
+        <h3>Secure</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="features-card">
+        <i class="fa-solid fa-users fa-2x"></i>
+        <h3>Team Support</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples -->
+  <section class="examples-section container section">
+    <div class="examples-header">
+      <h2>Our Work</h2>
+    </div>
+    <div class="examples-area">
+      <div class="examples-card" style="background:url('https://dummyimage.com/400x300/444/fff') center/cover;">
+        <div class="card-text">Project One</div>
+      </div>
+      <div class="examples-card" style="background:url('https://dummyimage.com/400x300/666/fff') center/cover;">
+        <div class="card-text">Project Two</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section section">
+    <div class="cta-section-container container flex">
+      <h2>Ready to start?</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <a href="#" class="primary-button">Join Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-footer container flex">
+      <div class="link-column flex">
+        <h3>Links</h3>
+        <a class="hover-link" href="#">Home</a>
+        <a class="hover-link" href="#">About</a>
+        <a class="hover-link" href="#">Services</a>
+      </div>
+      <div class="link-column flex">
+        <h3>More</h3>
+        <a class="hover-link" href="#">Blog</a>
+        <a class="hover-link" href="#">Contact</a>
+        <a class="hover-link" href="#">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subfooter -->
+  <div class="subfooter">
+    <div class="subfooter-container container">
+      <div class="footer-links">
+        <a class="hover-link" href="#">Privacy policy</a>
+        <a class="hover-link" href="#">Terms & Conditions</a>
+        <a class="hover-link" href="#">Security Information</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll animation trigger
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
+
+</body>
+  </html>
