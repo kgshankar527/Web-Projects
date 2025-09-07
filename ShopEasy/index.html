@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amazo.in – Demo Clone</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkfUcdOx6AVSklC4R4IgsWKq2RZt3h0g7YwG9R8Jb3rGqY7K7+YB9D+ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="toolbar">
+      <!-- Bars + Brand -->
+      <button id="menuBtn" class="brand" aria-label="Open menu">
+        <div class="brand-logo"><i class="fa-solid fa-bars"></i></div>
+        <span>Amazo.in</span>
+      </button>
+
+      <!-- Deliver To -->
+      <div class="deliver dropdown" id="locationDropdown">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="deliver-text">
+          <small>Deliver to</small>
+          <strong id="currentLocation">India</strong>
+        </div>
+        <i class="fa-solid fa-caret-down"></i>
+
+        <!-- Panel -->
+        <div class="dropdown-menu">
+          <div class="dropdown-title">Choose your location</div>
+          <div class="dropdown-row">
+            <input type="text" id="pinInput" placeholder="Enter PIN code">
+            <button id="savePin" class="mini-btn">Save</button>
+          </div>
+          <div class="dropdown-subtitle">Quick select</div>
+          <div class="chip-row">
+            <button class="chip-pin" data-pin="110001">Delhi 110001</button>
+            <button class="chip-pin" data-pin="400001">Mumbai 400001</button>
+            <button class="chip-pin" data-pin="560001">Bengaluru 560001</button>
+            <button class="chip-pin" data-pin="700001">Kolkata 700001</button>
+          </div>
+          <small class="muted">Demo only – sets a fake PIN locally</small>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <form class="search" id="searchForm" role="search">
+        <select id="categorySelect" aria-label="Category">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="home">Home</option>
+          <option value="beauty">Beauty</option>
+        </select>
+        <div class="search-bar">
+          <input id="searchInput" type="search" placeholder="Search Amazo.in" />
+          <button id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
+
+      <!-- Language -->
+      <div class="lang dropdown" id="langDropdown">
+        <i class="fa-solid fa-globe"></i>
+        <span id="currentLang">EN</span>
+        <i class="fa-solid fa-caret-down"></i>
+
+        <div class="dropdown-menu">
+          <div class="dropdown-title">Language</div>
+          <label class="radio-row"><input type="radio" name="lang" value="EN" checked> English (EN)</label>
+          <label class="radio-row"><input type="radio" name="lang" value="HI"> हिंदी (HI)</label>
+          <label class="radio-row"><input type="radio" name="lang" value="BN"> বাংলা (BN)</label>
+          <label class="radio-row"><input type="radio" name="lang" value="TE"> తెలుగు (TE)</label>
+          <button id="saveLang" class="mini-btn full">Apply</button>
+          <small class="muted">Demo – UI labels only</small>
+        </div>
+      </div>
+
+      <!-- Wishlist -->
+      <button class="icon-btn" id="openWishlist" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="cart-badge" id="wishCount">0</span>
+      </button>
+
+      <!-- Cart -->
+      <button class="icon-btn" id="openCart" aria-label="Cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+
+    <!-- Subnav (kept visually) -->
+    <nav class="subnav">
+      <div class="subnav-inner">
+        <span class="chip"><i class="fa-solid fa-bars"></i> All</span>
+        <span class="chip">Amazon miniTV</span>
+        <span class="chip">Best Sellers</span>
+        <span class="chip">Mobiles</span>
+        <span class="chip">Today’s Deals</span>
+        <span class="chip">Fashion</span>
+        <span class="chip">Electronics</span>
+        <span class="chip">Prime</span>
+        <span class="chip">Home & Kitchen</span>
+        <span class="chip">Customer Service</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" aria-label="Promotions">
+      <div class="slides" id="slides">
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600&auto=format&fit=crop');">
+          <h2>Big Savings on Smartphones – No Cost EMI & Exchange Offers</h2>
+        </div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1546919057-eae69c242a9f?q=80&w=1600&auto=format&fit=crop');">
+          <h2>Upgrade Your Kitchen – Best deals on appliances</h2>
+        </div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?q=80&w=1600&auto=format&fit=crop');">
+          <h2>Fashion Fest – Upto 70% Off on top brands</h2>
+        </div>
+      </div>
+      <div class="hero-controls">
+        <button class="hero-btn" id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="hero-btn" id="next"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+      <div class="hero-dots" id="dots" aria-hidden="true"></div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="grid" aria-label="Popular on Amazo.in" id="productGrid">
+      <!-- Same demo cards as पहले वाले template -->
+      <article class="card" data-category="electronics">
+        <h3>Noise Cancelling Headphones</h3>
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="rating" aria-label="4.5 stars">★★★★★</div>
+          <div class="price">₹ 3,999 <small>M.R.P: <s>₹ 6,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p1" data-name="Headphones" data-price="3999">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p1" data-name="Headphones" data-price="3999"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="fashion">
+        <h3>Stylish Sneakers</h3>
+        <div class="thumb alt3"></div>
+        <div class="body">
+          <div class="rating">★★★★☆</div>
+          <div class="price">₹ 1,499 <small>M.R.P: <s>₹ 2,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p2" data-name="Sneakers" data-price="1499">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p2" data-name="Sneakers" data-price="1499"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="electronics">
+        <h3>Smartwatch with SpO₂</h3>
+        <div class="thumb alt2"></div>
+        <div class="body">
+          <div class="rating">★★★★☆</div>
+          <div class="price">₹ 2,299 <small>M.R.P: <s>₹ 3,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p3" data-name="Smartwatch" data-price="2299">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p3" data-name="Smartwatch" data-price="2299"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="electronics">
+        <h3>Bluetooth Speaker</h3>
+        <div class="thumb alt1"></div>
+        <div class="body">
+          <div class="rating">★★★☆☆</div>
+          <div class="price">₹ 999 <small>M.R.P: <s>₹ 1,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p4" data-name="Speaker" data-price="999">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p4" data-name="Speaker" data-price="999"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="electronics">
+        <h3>Gaming Keyboard (RGB)</h3>
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop')"></div>
+        <div class="body">
+          <div class="rating">★★★★☆</div>
+          <div class="price">₹ 1,799 <small><s>₹ 2,499</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p5" data-name="Keyboard" data-price="1799">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p5" data-name="Keyboard" data-price="1799"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="electronics">
+        <h3>DSLR Camera</h3>
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1519183071298-a2962be96f83?q=80&w=1200&auto=format&fit=crop')"></div>
+        <div class="body">
+          <div class="rating">★★★★★</div>
+          <div class="price">₹ 38,499 <small><s>₹ 44,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p6" data-name="Camera" data-price="38499">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p6" data-name="Camera" data-price="38499"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="home">
+        <h3>Office Chair</h3>
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop')"></div>
+        <div class="body">
+          <div class="rating">★★★★☆</div>
+          <div class="price">₹ 6,299 <small><s>₹ 7,999</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p7" data-name="Chair" data-price="6299">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p7" data-name="Chair" data-price="6299"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="home">
+        <h3>Mixer Grinder</h3>
+        <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=1200&auto=format&fit=crop')"></div>
+        <div class="body">
+          <div class="rating">★★★☆☆</div>
+          <div class="price">₹ 2,099 <small><s>₹ 3,499</s></small></div>
+          <div class="btn-row">
+            <button class="btn add-to-cart" data-id="p8" data-name="Mixer" data-price="2099">Add to Cart</button>
+            <button class="btn ghost add-to-wish" data-id="p8" data-name="Mixer" data-price="2099"><i class="fa-regular fa-heart"></i> Wishlist</button>
+          </div>
+          <a class="link" href="#">See more</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="backtop" id="backTop">Back to top</div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="cols">
+      <div>
+        <h4>Get to Know Us</h4>
+        <a href="#">About Amazo</a>
+        <a href="#">Careers</a>
+        <a href="#">Press Releases</a>
+        <a href="#">Amazo Science</a>
+      </div>
+      <div>
+        <h4>Connect with Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+      <div>
+        <h4>Make Money with Us</h4>
+        <a href="#">Sell on Amazo</a>
+        <a href="#">Protect and Build Your Brand</a>
+        <a href="#">Amazo Global Selling</a>
+        <a href="#">Advertise Your Products</a>
+      </div>
+      <div>
+        <h4>Let Us Help You</h4>
+        <a href="#">COVID-19 and Amazo</a>
+        <a href="#">Returns Centre</a>
+        <a href="#">100% Purchase Protection</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Amazo.in – Demo clone for learning (Not affiliated with Amazon)</div>
+  </footer>
+
+  <!-- ===== Overlay + Sidebar (Accordion) ===== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar" aria-label="All Categories">
+    <header class="side-head">
+      <span id="sideHello"><i class="fa-solid fa-user"></i> Hello, Guest</span>
+      <div class="side-auth">
+        <button id="sideSignIn" class="mini-btn">Sign in</button>
+        <button id="sideSignOut" class="mini-btn ghost" style="display:none">Sign out</button>
+      </div>
+    </header>
+
+    <div class="accordion">
+      <!-- Section: Browse Categories -->
+      <button class="acc-btn" data-target="#accCats">
+        <span><i class="fa-solid fa-list"></i> Browse Categories</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="acc-panel" id="accCats">
+        <nav class="side-links">
+          <a href="#">Best Sellers</a>
+          <a href="#">New Releases</a>
+          <a href="#">Mobiles</a>
+          <a href="#">Electronics</a>
+          <a href="#">Fashion</a>
+          <a href="#">Home & Kitchen</a>
+          <a href="#">Beauty</a>
+          <a href="#">Sports</a>
+        </nav>
+      </div>
+
+      <!-- Section: Quick Links (Subnav Chips) -->
+      <button class="acc-btn" data-target="#accQuick">
+        <span><i class="fa-solid fa-bolt"></i> Quick Links</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="acc-panel" id="accQuick">
+        <div class="chip-bag">
+          <span class="chip">Amazon miniTV</span>
+          <span class="chip">Today’s Deals</span>
+          <span class="chip">Prime</span>
+          <span class="chip">Customer Service</span>
+          <span class="chip">Home & Kitchen</span>
+          <span class="chip">Electronics</span>
+          <span class="chip">Fashion</span>
+          <span class="chip">Mobiles</span>
+        </div>
+      </div>
+
+      <!-- Section: Account -->
+      <button class="acc-btn" data-target="#accAccount">
+        <span><i class="fa-solid fa-user-gear"></i> Account</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="acc-panel" id="accAccount">
+        <nav class="side-links">
+          <a href="#" id="accOrders">Your Orders</a>
+          <a href="#" id="accWishlist">Your Wishlist</a>
+          <a href="#" id="accCart">Your Cart</a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== Modals (Sign-in / Cart / Wishlist) ===== -->
+  <div class="modal" id="authModal" aria-hidden="true" role="dialog" aria-label="Sign in">
+    <div class="sheet">
+      <header>
+        <span>Sign in</span>
+        <button id="closeModal" class="x-btn"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      <div class="content">
+        <label>Email
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </label>
+        <label>Password
+          <input type="password" id="password" placeholder="••••••••" required>
+        </label>
+        <button id="doSignin">Continue</button>
+        <small class="muted">Demo only – no real authentication</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="cartModal" aria-hidden="true" role="dialog" aria-label="Cart">
+    <div class="sheet">
+      <header>
+        <span>Your Cart</span>
+        <button id="closeCart" class="x-btn"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      <div class="content">
+        <div id="cartList" class="list"></div>
+        <div class="line"></div>
+        <div class="totals">
+          <div>Subtotal:</div>
+          <strong>₹ <span id="cartTotal">0</span></strong>
+        </div>
+        <button id="checkoutBtn">Buy Now</button>
+        <small class="muted">Demo only – fake OTP flow</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="wishlistModal" aria-hidden="true" role="dialog" aria-label="Wishlist">
+    <div class="sheet">
+      <header>
+        <span>Your Wishlist</span>
+        <button id="closeWishlist" class="x-btn"><i class="fa-solid fa-xmark"></i></button>
+      </header>
+      <div class="content">
+        <div id="wishList" class="list"></div>
+        <div class="line"></div>
+        <div class="muted">Tip: Move items from wishlist to cart anytime.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
